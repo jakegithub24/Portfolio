@@ -1,0 +1,159 @@
+<!-- blog.html - Updated Blog Listing Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jake24</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">Jake24</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="blog-title animate__animated animate__fadeInDown">My <span class="text-gradient">Blog</span></h1>
+                    <p class="blog-subtitle animate__animated animate__fadeInUp">Thoughts, tutorials, and insights on technology, programming, and open source</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Search & Filter -->
+    <section class="blog-filter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glass-card filter-card">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="search-box">
+                                    <i class="bi bi-search"></i>
+                                    <input type="text" id="blogSearch" placeholder="Search blog posts by title or keywords...">
+                                    <button id="clearSearch" class="btn-clear">×</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="sort-dropdown">
+                                    <select id="sortSelect" class="form-select">
+                                        <option value="newest">Newest First</option>
+                                        <option value="oldest">Oldest First</option>
+                                        <option value="popular">Most Popular</option>
+                                        <option value="title-asc">Title A-Z</option>
+                                        <option value="title-desc">Title Z-A</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tag-filter mt-4">
+                            <h6>Filter by Tags:</h6>
+                            <div class="tag-buttons" id="tagFilter">
+                                <button class="tag-btn active" data-tag="all">All Posts</button>
+                                <button class="tag-btn" data-tag="linux">Linux</button>
+                                <button class="tag-btn" data-tag="python">Python</button>
+                                <button class="tag-btn" data-tag="web-dev">Web Development</button>
+                                <button class="tag-btn" data-tag="open-source">Open Source</button>
+                                <button class="tag-btn" data-tag="tools">Tools</button>
+                                <button class="tag-btn" data-tag="backend">Backend</button>
+                                <button class="tag-btn" data-tag="security">Security</button>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-results mt-3">
+                            <span id="resultsCount">Showing 8 of 12 posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts-section">
+        <div class="container">
+            <div class="row" id="blogPostsContainer">
+                <!-- Blog posts will be loaded dynamically by JavaScript -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-5" id="loadMoreContainer">
+                <button id="loadMoreBtn" class="btn btn-primary">Load More Posts</button>
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="text-center mt-5 d-none" id="noResultsMessage">
+                <div class="glass-card p-5">
+                    <i class="bi bi-search display-4 text-muted mb-3"></i>
+                    <h3>No posts found</h3>
+                    <p class="text-muted">Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Jake24. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Made with <i class="fas fa-heart text-danger"></i> and <i class="fas fa-code"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>

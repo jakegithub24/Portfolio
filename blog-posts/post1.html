@@ -1,0 +1,411 @@
+<!-- blog-posts/post1.html - Enhanced Blog Post Template -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Arch Linux | Jake24 Blog</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="brand-text">Jake24</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-container">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <article class="blog-post-content glass-card">
+                        <div class="blog-post-header">
+                            <div class="blog-post-category">Linux</div>
+                            <h1>Getting Started with Arch Linux</h1>
+                            <div class="blog-post-meta-large">
+                                <div class="author-avatar">J</div>
+                                <div>
+                                    <div class="author-name">Jake24</div>
+                                    <div class="post-date">June 15, 2023 • 8 min read • 1,245 views</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <img src="../assets/blog/arch-linux.jpg" alt="Arch Linux Desktop" class="blog-post-image-large">
+                        
+                        <p>Arch Linux is a lightweight and flexible Linux distribution that follows the KISS principle (Keep It Simple, Stupid). Unlike many other distributions, Arch provides a minimal base system and allows users to build their custom environment from the ground up.</p>
+                        
+                        <h2>Why Choose Arch Linux?</h2>
+                        
+                        <p>Arch Linux offers several advantages for both beginners and experienced users:</p>
+                        
+                        <div class="row my-4">
+                            <div class="col-md-6">
+                                <div class="feature-box glass-card p-3 mb-3">
+                                    <h5><i class="bi bi-arrow-repeat text-accent me-2"></i> Rolling Release</h5>
+                                    <p class="mb-0">Continuous updates mean you always have the latest software versions without reinstalling.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-box glass-card p-3 mb-3">
+                                    <h5><i class="bi bi-box-seam text-accent me-2"></i> Pacman Package Manager</h5>
+                                    <p class="mb-0">A simple yet powerful package manager with dependency resolution and easy package management.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-box glass-card p-3 mb-3">
+                                    <h5><i class="bi bi-github text-accent me-2"></i> AUR (Arch User Repository)</h5>
+                                    <p class="mb-0">Access to thousands of user-contributed packages not available in official repositories.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-box glass-card p-3 mb-3">
+                                    <h5><i class="bi bi-book text-accent me-2"></i> Excellent Documentation</h5>
+                                    <p class="mb-0">The Arch Wiki is one of the best resources in the Linux community with extensive documentation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Installation Process</h2>
+                        
+                        <p>The Arch installation process is terminal-based and gives you complete control over your system. Here's a simplified overview:</p>
+                        
+                        <img src="../assets/blog/arch-install.jpg" alt="Arch Linux Installation" class="img-fluid rounded my-4">
+                        
+                        <h3>1. Download and Boot</h3>
+                        <p>Download the latest Arch ISO from the official website and create a bootable USB drive using tools like <code>dd</code> or <code>Rufus</code>.</p>
+                        
+                        <h3>2. Partition Disks</h3>
+                        <p>Use tools like <code>fdisk</code> or <code>cfdisk</code> to partition your disk. A typical setup includes:</p>
+                        
+                        <pre><code># Example partition layout
+/dev/sda1 - 512M  EFI System
+/dev/sda2 - 20G   Linux swap (optional with enough RAM)
+/dev/sda3 - rest  Linux filesystem</code></pre>
+                        
+                        <div class="alert glass-card my-4">
+                            <h5><i class="bi bi-info-circle me-2"></i> Pro Tip</h5>
+                            <p class="mb-0">For UEFI systems, you need an EFI system partition. For BIOS systems, you can use MBR partitioning.</p>
+                        </div>
+                        
+                        <h3>3. Format and Mount</h3>
+                        
+                        <pre><code># Format partitions
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda3
+
+# Mount the filesystem
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot</code></pre>
+                        
+                        <h3>4. Install Base System</h3>
+                        
+                        <pre><code>pacstrap /mnt base linux linux-firmware</code></pre>
+                        
+                        <h3>5. Generate FSTAB</h3>
+                        
+                        <pre><code>genfstab -U /mnt >> /mnt/etc/fstab</code></pre>
+                        
+                        <h2>Post-Installation Setup</h2>
+                        
+                        <p>After the base installation, you'll need to configure your system:</p>
+                        
+                        <h3>Set Timezone</h3>
+                        
+                        <pre><code>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+hwclock --systohc</code></pre>
+                        
+                        <h3>Localization</h3>
+                        
+                        <pre><code># Edit /etc/locale.gen and uncomment your locale
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf</code></pre>
+                        
+                        <h3>Network Configuration</h3>
+                        
+                        <pre><code># Set hostname
+echo "archlinux" > /etc/hostname
+
+# Install network manager
+pacman -S networkmanager
+systemctl enable NetworkManager</code></pre>
+                        
+                        <h3>Create User</h3>
+                        
+                        <pre><code># Set root password
+passwd
+
+# Create a new user
+useradd -m -G wheel username
+passwd username
+
+# Enable sudo for wheel group
+EDITOR=nano visudo
+# Uncomment: %wheel ALL=(ALL) ALL</code></pre>
+                        
+                        <h2>Installing a Desktop Environment</h2>
+                        
+                        <p>Arch doesn't come with a desktop environment by default. You can choose from many options:</p>
+                        
+                        <div class="table-responsive my-4">
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Desktop Environment</th>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>GNOME</td>
+                                        <td><code>pacman -S gnome gnome-extra</code></td>
+                                        <td>Modern, user-friendly desktop</td>
+                                    </tr>
+                                    <tr>
+                                        <td>KDE Plasma</td>
+                                        <td><code>pacman -S plasma plasma-meta</code></td>
+                                        <td>Feature-rich, customizable desktop</td>
+                                    </tr>
+                                    <tr>
+                                        <td>XFCE</td>
+                                        <td><code>pacman -S xfce4 xfce4-goodies</code></td>
+                                        <td>Lightweight and fast</td>
+                                    </tr>
+                                    <tr>
+                                        <td>i3 (tiling WM)</td>
+                                        <td><code>pacman -S i3-wm i3status dmenu</code></td>
+                                        <td>Keyboard-focused tiling window manager</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <p>After installing your preferred desktop environment, enable the display manager:</p>
+                        
+                        <pre><code># For GNOME (GDM)
+systemctl enable gdm
+
+# For KDE (SDDM)
+systemctl enable sddm
+
+# For lightdm (works with many DEs)
+systemctl enable lightdm</code></pre>
+                        
+                        <div class="alert glass-card my-4">
+                            <h5><i class="bi bi-lightbulb me-2"></i> Quick Tip</h5>
+                            <p class="mb-0">If you prefer to start your desktop environment manually from the terminal, you can skip installing a display manager and simply run <code>startx</code> after logging in.</p>
+                        </div>
+                        
+                        <h2>Maintenance Tips</h2>
+                        
+                        <p>Keeping your Arch system updated is straightforward:</p>
+                        
+                        <pre><code># Update package database
+sudo pacman -Sy
+
+# Upgrade all packages
+sudo pacman -Syu
+
+# Search for packages
+pacman -Ss package_name
+
+# Install a package
+sudo pacman -S package_name
+
+# Remove a package
+sudo pacman -R package_name</code></pre>
+                        
+                        <p>For a more detailed guide with troubleshooting tips and advanced configurations, check the <a href="https://wiki.archlinux.org/" target="_blank">Arch Wiki</a>.</p>
+                        
+                        <h2>Conclusion</h2>
+                        
+                        <p>Arch Linux provides an excellent learning opportunity for understanding how Linux systems work. While the installation process is more involved than with other distributions, the control and flexibility it offers are unparalleled.</p>
+                        
+                        <p>Remember to consult the <a href="https://wiki.archlinux.org/" target="_blank">Arch Wiki</a> whenever you encounter issues—it's an invaluable resource for both beginners and experienced Arch users.</p>
+                        
+                        <blockquote>
+                            <p>"The joy of Arch Linux is in the journey of building your perfect system, not just the destination."</p>
+                        </blockquote>
+                        
+                        <!-- Post Tags -->
+                        <div class="post-tags my-4">
+                            <strong>Tags:</strong>
+                            <a href="../blog.html?tag=linux" class="tag-link">linux</a>
+                            <a href="../blog.html?tag=tutorial" class="tag-link">tutorial</a>
+                            <a href="../blog.html?tag=beginners" class="tag-link">beginners</a>
+                            <a href="../blog.html?tag=arch" class="tag-link">arch</a>
+                        </div>
+                        
+                        <!-- Post Navigation -->
+                        <div class="post-navigation">
+                            <a href="#" class="prev-post">
+                                <div class="nav-icon">
+                                    <i class="bi bi-arrow-left"></i>
+                                </div>
+                                <div>
+                                    <div class="nav-post-label">Previous Post</div>
+                                    <div class="nav-post-title">Python Virtual Environments Explained</div>
+                                    <div class="nav-post-date">October 20, 2022</div>
+                                </div>
+                            </a>
+                            
+                            <a href="post2.html" class="next-post">
+                                <div class="nav-icon">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                                <div>
+                                    <div class="nav-post-label">Next Post</div>
+                                    <div class="nav-post-title">Building Secure File Encryption with Fernet</div>
+                                    <div class="nav-post-date">May 22, 2023</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <a href="../blog.html" class="back-to-blog">
+                            <i class="fas fa-arrow-left"></i> Back to All Posts
+                        </a>
+                    </article>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <!-- About Author -->
+                        <div class="sidebar-card glass-card">
+                            <h3 class="sidebar-title">About Author</h3>
+                            <div class="author-info text-center">
+                                <div class="author-avatar-large mx-auto mb-3">J</div>
+                                <h4>Jake24</h4>
+                                <p class="text-muted">IT/CS Student & Open Source Enthusiast</p>
+                                <p>Passionate about Linux, Python, and building practical tools. Loves exploring new technologies and contributing to open source projects.</p>
+                                <div class="author-social mt-3">
+                                    <a href="https://github.com/jakegithub24" class="btn btn-sm btn-outline me-2">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                    <a href="https://instagram.com/jakegithub24" class="btn btn-sm btn-outline">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Featured Posts -->
+                        <div class="sidebar-card glass-card">
+                            <h3 class="sidebar-title">Featured Posts</h3>
+                            <div class="featured-post">
+                                <img src="../assets/blog/encryption.jpg" alt="Encryption" class="featured-post-image">
+                                <div class="featured-post-content">
+                                    <h4><a href="post2.html">Building Secure File Encryption with Fernet</a></h4>
+                                    <div class="featured-post-date">May 22, 2023</div>
+                                </div>
+                            </div>
+                            <div class="featured-post">
+                                <img src="../assets/blog/flask-express.jpg" alt="Flask vs Express" class="featured-post-image">
+                                <div class="featured-post-content">
+                                    <h4><a href="post3.html">Flask vs Express: Backend Showdown</a></h4>
+                                    <div class="featured-post-date">April 10, 2023</div>
+                                </div>
+                            </div>
+                            <div class="featured-post">
+                                <img src="../assets/blog/open-source.jpg" alt="Open Source" class="featured-post-image">
+                                <div class="featured-post-content">
+                                    <h4><a href="post4.html">My First Open Source Contribution</a></h4>
+                                    <div class="featured-post-date">March 5, 2023</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Popular Tags -->
+                        <div class="sidebar-card glass-card">
+                            <h3 class="sidebar-title">Popular Tags</h3>
+                            <div class="tag-cloud">
+                                <a href="../blog.html?tag=linux">linux</a>
+                                <a href="../blog.html?tag=python">python</a>
+                                <a href="../blog.html?tag=web-dev">web development</a>
+                                <a href="../blog.html?tag=open-source">open source</a>
+                                <a href="../blog.html?tag=tutorial">tutorial</a>
+                                <a href="../blog.html?tag=security">security</a>
+                                <a href="../blog.html?tag=flask">flask</a>
+                                <a href="../blog.html?tag=bash">bash</a>
+                                <a href="../blog.html?tag=docker">docker</a>
+                                <a href="../blog.html?tag=git">git</a>
+                                <a href="../blog.html?tag=beginners">beginners</a>
+                                <a href="../blog.html?tag=api">API</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Newsletter -->
+                        <div class="sidebar-card glass-card">
+                            <h3 class="sidebar-title">Stay Updated</h3>
+                            <p>Subscribe to get notified about new posts and updates.</p>
+                            <div class="newsletter-form">
+                                <input type="email" class="form-control mb-2" placeholder="Your email address">
+                                <button class="btn btn-primary w-100">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 Jake24. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Made with <i class="fas fa-heart text-danger"></i> and <i class="fas fa-code"></i></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/blog-post.js"></script>
+</body>
+</html>
