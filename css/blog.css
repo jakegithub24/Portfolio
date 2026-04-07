@@ -258,14 +258,9 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(90deg, var(--color-accent), var(--color-accent2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
+    object-fit: cover;
     margin-right: 1rem;
+    flex-shrink: 0;
 }
 
 .blog-post-image-large {

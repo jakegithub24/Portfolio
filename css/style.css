@@ -52,7 +52,7 @@ a {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     padding: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -61,7 +61,7 @@ a {
 .glass-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    border: 2px solid rgba(121, 128, 172, 0.8) !important;
+    border: 2px solid rgb(121, 128, 172) !important;
 }
 
 /* Navigation */
@@ -249,6 +249,99 @@ a {
     }
     60% {
         transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* Hero Section - New Layout */
+.hero-content-col {
+    z-index: 10;
+    padding-left: 0;
+}
+
+.hero-image-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem !important;
+}
+
+.hero-profile-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.code-window {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero-content-col {
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-image-col {
+        padding-right: 0;
+        justify-content: center;
+    }
+    
+    .hero-image-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-profile-image {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-profile-image {
+        max-width: 250px;
+    }
+    
+    .code-window {
+        min-width: 100%;
     }
 }
 
