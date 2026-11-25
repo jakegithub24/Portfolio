@@ -91,6 +91,7 @@ a {
     font-weight: 500;
     margin: 0 0.5rem;
     position: relative;
+    display: inline-block;
 }
 
 .nav-link::after {
